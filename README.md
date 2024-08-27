@@ -38,4 +38,25 @@ Next we need to create relationships between the tables, although Power BI has a
 ![Manage_Relationships](https://github.com/user-attachments/assets/cfba8309-62f1-4b15-acac-c18fa8dcaadf)
 
 
-Here you can see all the relationships created for the model.
+Here you can see all the relationships created . Below is a screenshot of the data model.
+
+![model](https://github.com/user-attachments/assets/45db918f-3487-4377-834b-ad62e8c9cc43)
+
+Now that the model has been setup I added a new blank table to act as a container for the measures needed for the project. The initial measures created are shown below with their DAX code.
+
+- `Total Orders = COUNT(Orders[Order Date])`
+- `Total Revenue = SUMX(Orders, Orders[Product Quantity] * RELATED(Products[Sale Price]))`
+- `Total Profit = SUMX(Orders, Orders[Product Quantity] * (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])))`
+- `Total Customers = DISTINCTCOUNT(Orders[User ID])`
+- `Total Quantity = SUM(Orders[Product Quantity])`
+- `Profit YTD = TOTALYTD([Total Profit], Dates[Date])`
+- `Revenue YTD: Revenue YTD = TOTALYTD([Total Revenue], Dates[Date]`
+
+The final stage of this part was to create date and geography hierarchies. This was achieved by switching to the model view and following the procedure shown in the screenshots.
+
+![heiarchy menu](https://github.com/user-attachments/assets/2643cda7-1ecb-46ba-970b-85271d01c5a4)
+
+![date_hierarchy](https://github.com/user-attachments/assets/70e760f4-4ca4-4970-b951-4c7d145ba257)
+
+![geography_hierarchy](https://github.com/user-attachments/assets/aadf151b-8a6e-4855-a166-3aa075eeea9b)
+
