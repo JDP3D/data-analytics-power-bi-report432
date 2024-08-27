@@ -4,6 +4,7 @@
 3.  [Build the customer details page](#build-the-customer-details-page)
 4.  [Create an Executive Summary Page](#create-an-executive-summary-page)
 5.  [Create a Product Detail Page](#create-a-product-detail-page)
+6.  [Create a Stores Map Page](#create-a-stores-map-page)
 
 ## Import the Data into Power BI
 
@@ -182,5 +183,72 @@ The page can be filtered by ctrl clicking on the filter icon at the top left of 
 <p align="center">
       <img src="https://github.com/user-attachments/assets/cb2401b3-d74b-4c15-b7ee-398e4d9499e6" alt="[Filtered_page]"/>
  <p align="center">
+
+ ## Create a Stores Map Page
+
+ <p align="center">
+      <img src="https://github.com/user-attachments/assets/9a834d6e-8ddb-4757-9f13-26e02080efde" alt="[Map_page]"/>
+ <p align="center">
+
+This page has a slicer on top allowing you to filter the map by country. The map itself is created using a Map visual with the following settings.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/cfef6806-832f-4cd2-98f8-17f1be695d4f" alt="[map_settings]"/>
+<p align="center">
+
+The Geography Hierarchy we created earlier is used to drill through to different levels of the map. I then created a Drillthrough page that can be reached by right clicking on one of the green bubbles and choosing Drill through from the menu.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/ee60e378-3928-4669-962c-d3d2e8ad0e08" alt="[Drill_Through]"/>
+<p align="center">
+
+Upon clicking on Drill through you will arrive at the following page.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/0ea85454-29d4-47d0-937b-3daaf9588fa8" alt="[Store_DrillPage]"/>
+<p align="center">
+
+This page has details for the store you clicked on. The two Gauges to the top right use two new measures.
+
+- `Profit Goal = TOTALYTD([Total Profit], SAMEPERIODLASTYEAR(Dates[Date])) * 1.2`
+- `Revenue Goal = TOTALYTD([Total Revenue], SAMEPERIODLASTYEAR(Dates[Date])) * 1.2`
+
+These gauges show the current year-to-date profit and revenue. The black lines are targets of a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year. 
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/abc32b39-e8be-4a3d-8757-3aa83ad5c204" alt="[YTD_Gauge]"/>
+<p align="center">
+<p align="center">Settings for the Profit YTD Gauge</p>
+
+The DrilThrough page was set up using the following settings.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/617161f9-8816-4ddd-a10b-806717009798" alt="[Setting_DrillThrough]"/>
+<p align="center">
+
+The last task of this section is to create a tooltip page. This page just consists of the Profit YTD gauge with a subtitle added for the selected store.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/ade96be1-f08f-4dcd-9e38-f3bc8af918b4" alt="[Gauge_Tooltip]"/>
+<p align="center">
+ 
+The ToolTip page is set up with the following settings.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/106e4968-905a-4ed4-8c54-a7aa759bc4db" alt="[Gauge_Tooltip]"/>
+<p align="center">
+
+Finally on the Store Map page we select the Map visual and adjust the following settings.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/be34c5b3-e4fe-49bb-a20a-b7ea8051696b" alt="[TooTips_MapPage]"/>
+<p align="center">
+
+The result of this is that when we hover over a region on the map with our mouse, we will see the related gauge from the Tooltip page.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/80f83f40-70a1-4d7b-b5ca-e9c4737dd4fa" alt="[Tooltip_Example]"/>
+<p align="center">
+ 
 
 
