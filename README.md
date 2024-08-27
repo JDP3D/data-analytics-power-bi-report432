@@ -5,6 +5,7 @@
 4.  [Create an Executive Summary Page](#create-an-executive-summary-page)
 5.  [Create a Product Detail Page](#create-a-product-detail-page)
 6.  [Create a Stores Map Page](#create-a-stores-map-page)
+7.  [Cross-Filtering and Navigation](#cross-filtering-and-navigation)
 
 ## Import the Data into Power BI
 
@@ -250,5 +251,19 @@ The result of this is that when we hover over a region on the map with our mouse
       <img src="https://github.com/user-attachments/assets/80f83f40-70a1-4d7b-b5ca-e9c4737dd4fa" alt="[Tooltip_Example]"/>
 <p align="center">
  
+## Cross-Filtering and Navigation
 
+We do not want some of the visuals to filter other visuals on the page. As an example, on the Executive Summary page the `Product Category` bar chart and `Top 10 Products` table should not filter the card visuals or KPIs. To achieve this click on the visual that you want to change the filtering for, then change to the **Format** tab. Click on the **Edit Interactions** button. You will see some icons appear next to all the other visuals on the page. Click on the no-entry icon next to the visual you want to exclude.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/d2770db5-5a7c-4a87-8116-6c147c4ad78c" alt="[Cross-Filter]"/>
+<p align="center">
+
+The final task is to add navigation buttons for the individual report pages. Clicking on these buttons will transport us to the desired page of the report. We will use custom icons for each page.  We can insert a blank button from the **Insert** tab and change the settings as shown below.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/dbe752db-8d29-431f-b19d-92abac067959" alt="[Button]"/>
+<p align="center">
+ 
+This completes the report.
 
