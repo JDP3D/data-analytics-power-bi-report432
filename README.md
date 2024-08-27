@@ -34,10 +34,9 @@ The first task is to create a date table. To achieve this I changed to the Table
 
 Next we need to create relationships between the tables, although Power BI has already created most of what is needed automatically by matching the column names. To create the remaining relationships I changed to the Model view and clicked on the  **Manage Relationships** button in the ribbon which gives you an interface as shown below.
 
-
 <p align="center">
-![Manage_Relationships](https://github.com/user-attachments/assets/cfba8309-62f1-4b15-acac-c18fa8dcaadf)
-</p>
+   <img src="https://github.com/user-attachments/assets/cfba8309-62f1-4b15-acac-c18fa8dcaadf" alt="[Manage_Relationships]"/>
+<p align="center">
 
 Here you can see all the relationships created . Below is a screenshot of the data model.
 
