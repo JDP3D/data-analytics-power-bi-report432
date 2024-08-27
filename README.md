@@ -63,7 +63,7 @@ The final stage of this part was to create date and geography hierarchies. This 
    <img src="https://github.com/user-attachments/assets/aadf151b-8a6e-4855-a166-3aa075eeea9b" alt="[geography_hierarchy]"/>
 <p align="center">
 
-### Build the customer details page
+## Build the customer details page
 
 Below is a screenshot of the final Customer Details page.
 
