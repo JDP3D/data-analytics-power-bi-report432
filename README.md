@@ -3,6 +3,7 @@
 2.  [Create the Data Model](#create-the-data-model)
 3.  [Build the customer details page](#build-the-customer-details-page)
 4.  [Create an Executive Summary Page](#create-an-executive-summary-page)
+5.  [Create a Product Detail Page](#create-a-product-detail-page)
 
 ## Import the Data into Power BI
 
@@ -135,3 +136,51 @@ I have also included a screenshot of the KPI's in different states.
 <p align="center">
       <img src="https://github.com/user-attachments/assets/2673c59a-aa06-4c77-a3c1-70a699252ca3" alt="[kpi_states]"/>
  <p align="center">
+
+ ## Create a Product Detail Page
+
+The products detail page contains a couple of new types of visual both of which used existing columns. The visual numbered 3 in the screenshot is an area chart, and number 4 is a scatter chart.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/06d46986-f45d-427c-9132-4b42fd5cccfa" alt="[Product_Details_Page]"/>
+ <p align="center">
+
+I won't discuss these any further and leave them for you to investigate if interested. I will now just detail the visuals for which I had to create new measures. The two cards next to number 1 show information on any filters applied to the page from the product category or store country. They use the following measures:
+
+- `Category Selection = IF(ISFILTERED(Products[Category]), SELECTEDVALUE(Products[Category], "No Selection"), "No Selection")`
+- `Country Selection = IF(ISFILTERED(Stores[Country]), SELECTEDVALUE(Stores[Country],"No Selection"), "No Selection")`
+
+The three visuals in the top right of the page, next to number 2, are gauges that show the current-quarter performance of `Orders`, `Revenue` and `Profit` against a quarterly target. The target is set to be a 10% quarter-on-quarter growth in all three metrics. The measures created for these visuals are
+
+- `Current Quarter Orders = TOTALQTD([Total Orders], 'Dates'[Date])`
+- `QoQ Orders Target = TOTALQTD([Total Orders], DATEADD(Dates[Date], -1, QUARTER)) * 1.1`
+- `Gap Orders Target = [QoQ Orders Target] - [Current Quarter Orders]`
+- `Current Quarter Revenue = TOTALQTD([Total Revenue], 'Dates'[Date])`
+- `QoQ Revenue Target = TOTALQTD([Total Revenue], DATEADD(Dates[Date], -1, QUARTER)) * 1.1`
+- `Gap Revenue Target = [QoQ Revenue Target] - [Current Quarter Revenue]`
+- `Current Quarter Profit = TOTALQTD([Total Profit], 'Dates'[Date])`
+- `QoQ Profit Target = TOTALQTD([Total Profit], DATEADD(Dates[Date], -1, QUARTER)) * 1.1`
+- `Gap Profit Target = [QoQ Profit Target] - [Current Quarter Profit]`
+
+An example of the setup is shown below.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/9ed44f33-009c-4df4-9359-d8326bbf8e9d" alt="[Gauge_setup]"/>
+ <p align="center">
+
+The central text will be shown in red if the targets haven't been met, or green if the targets are achieved. This is achieved through setting conditions on the colour in the **Values** section of the **Format** pane using the Gap measures.
+
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/c9ab7541-65c1-4e6f-b47e-b9e5d16fd4b1" alt="[Profit_Condition]"/>
+ <p align="center">
+
+<p align="center">Condition settings for the Profit Gauge</p>
+
+The page can be filtered by ctrl clicking on the filter icon at the top left of the page. This produces a menu with filter options as shown below.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/cb2401b3-d74b-4c15-b7ee-398e4d9499e6" alt="[Filtered_page]"/>
+ <p align="center">
+
+
