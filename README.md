@@ -2,6 +2,7 @@
 1.  [Import the Data into Power BI](#import-the-data-into-power-bi)
 2.  [Create the Data Model](#create-the-data-model)
 3.  [Build the customer details page](#build-the-customer-details-page)
+4.  [Create an Executive Summary Page](#create-an-executive-summary-page)
 
 ## Import the Data into Power BI
 
@@ -106,3 +107,31 @@ For the fine tunings of these visualisations you can check them out in the file 
 <p align="center">
     Donut chart settings
 </p>
+
+## Create an Executive Summary Page
+
+Below is a screenshot of the executive summary page.
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/1ed67971-4d89-4057-a38b-b3ce31d26c0f" alt="[Executive_Summary]"/>
+ <p align="center">
+
+The majority of the visuals were created in the same manner as before. There is only one new visual type used, the three KPI's labelled 1. These show current quarter values and targets of 5% growth in each measure compared to the previous quarter. If the targets are not met the current quarter value will be shown in red, otherwise if the target is achieved the text will be green. The measures created for these visuals with the DAX code are as follows:
+
+1. `Previous Quarter Revenue = CALCULATE ([Total Profit], DATEADD(Dates[Date], -1, QUARTER))`
+2. `Target Revenue = 1.05 * [Previous Quarter Revenue]`
+3. `Previous Quarter Orders = CALCULATE ([Total Orders], DATEADD(Dates[Date], -1, QUARTER))`
+4. `Target Orders = 1.05 * [Previous Quarter Orders]`
+5. `Previous Quarter Profit = CALCULATE ([Total Profit], DATEADD(Dates[Date], -1, QUARTER))`
+6. `Target Profit = 1.05 * [Previous Quarter Profit]`
+
+Each visual is setup in the following manner.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/31c27519-c71c-44ba-8085-7ce25334d5ae" alt="[kpi]"/>
+ <p align="center">
+
+I have also included a screenshot of the KPI's in different states.
+
+<p align="center">
+      <img src="https://github.com/user-attachments/assets/2673c59a-aa06-4c77-a3c1-70a699252ca3" alt="[kpi_states]"/>
+ <p align="center">
