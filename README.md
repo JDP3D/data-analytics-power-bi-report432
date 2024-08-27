@@ -31,7 +31,7 @@ The first task is to create a date table. To achieve this I changed to the Table
 - `Start of Month`:   `Start of Month = STARTOFMONTH(Dates[Date])`
 - `Start of Week`:   `Start of Week = Dates[Date] - WEEKDAY(Dates[Date],2) + 1` 
 
-Each Next we need to create relationships between the tables, although Power BI has already created most of what is needed automatically by matching the column names. To create the remaining relationships I changed to the Model view and clicked on the  **Manage Relationships** button in the ribbon which gives you an interface as shown below.
+Next we need to create relationships between the tables, although Power BI has already created most of what is needed automatically by matching the column names. To create the remaining relationships I changed to the Model view and clicked on the  **Manage Relationships** button in the ribbon which gives you an interface as shown below.
 
 
 
