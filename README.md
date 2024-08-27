@@ -1,8 +1,8 @@
 ## Table of Contents
-1. [Import the Data into Power BI](#1.-Import-the-Data-into-Power-BI)
-2. [Create the Data Model](2.-Create-the-Data-Model)
+1.  [Import the Data into Power BI](#import-the-data-into-power-bi)
+2.  [Create the Data Model](#create-the-data-model)
 
-### 1. Import the Data into Power BI
+### Import the Data into Power BI
 
 The first step was to load the **Orders** table from an Azure SQL database using the **Get Data** function on the Home tab in Power Bi. Once the data was acquired I opened the table in the **Power Query Editor**  and performed the following edits.
 
@@ -16,7 +16,7 @@ The next step was to import the **Stores** table from an Azure Blob Storage. In 
 
 The final step was to create the `[Customers]` table by importing a folder of csv files using the **Combine and Transform** feature of Power BI. In the **Power Query Editor** I removed two unnecessary columns, [Content]  where all rows had the value *binary*, and  `[Source]`, where the rows had the name of the csv file where the data came from. I then used the **Merge Columns** function using space as a separator to combine the first and last names of the customers into one column. I then renamed any columns as required and checked the data types.
 
-### 2. Create the Data Model
+### Create the Data Model
 
 The first task is to create a date table. To achieve this I changed to the Table view in Power Bi and used the **NEW Table** function with the DAX code
  `Dates = CALENDAR(DATE(2010,1,1), MAX(Orders[Shipping Date]))`. I then added the columns shown below with the DAX code as follows
