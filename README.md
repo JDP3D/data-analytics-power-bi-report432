@@ -286,4 +286,11 @@ This completes the report.
 
 ## Create Metrics for Users Outside the Company using SQL
 
-For this final task I will connect to a  Postgres database server hosted on Microsoft Azure. Using VSCode with the SQLTools extension I will extract data with SQL queries from the database. You will find .sql files in the SQL folder with the SQL queries and .csv files in the CSV folder with the results of the queries. AT the time of writing there was an issue with the dim_user table in the database, I could write the correct query but not run it to obtain the results. 
+For this final task I will connect to a  Postgres database server hosted on Microsoft Azure. Using VSCode with the SQLTools extension I will extract data with SQL queries from the database. You will find .sql files in the SQL folder with the SQL queries and .csv files in the CSV folder with the results of the queries. AT the time of writing there was an issue with the dim_user table in the database, I could write the correct query but not run it to obtain the results.  The questions are:
+
+1. How many staff are there in all of the UK stores? 
+2. Which month in 2022 has had the highest revenue? 
+3. Which German store type had the highest revenue for 2022? 
+4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders?
+5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
