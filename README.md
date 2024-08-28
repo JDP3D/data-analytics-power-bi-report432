@@ -1,3 +1,19 @@
+# Data Analytics Power BI Project
+
+This project is part of an AICore Data Analysis boot camp.
+
+## Description of the project
+
+You have recently been approached by a medium-sized international retailer who is keen on elevating their business intelligence practices. With operations spanning across different regions, they've accumulated large amounts of sales from disparate sources over the years.
+
+Recognizing the value of this data, they aim to transform it into actionable insights for better decision-making. Your goal is to use Microsoft Power BI to design a comprehensive Quarterly report. This will involve extracting and transforming data from various origins, designing a robust data model rooted in a star-based schema, and then constructing a multi-page report.
+
+The report will present a high-level business summary tailored for C-suite executives, and also give insights into their highest value customers segmented by sales region, provide a detailed analysis of top-performing products categorised by type against their sales targets, and a visually appealing map visual that spotlights the performance metrics of their retail outlets across different territories.
+
+## Files
+
+The main report is in the Data_Analytics_PowerBi_Report_Final.pbix file. Files for the last task, running sql queries in VSCode, can be found in the SQL and CSV folders.
+
 ## Table of Contents
 1.  [Import the Data into Power BI](#import-the-data-into-power-bi)
 2.  [Create the Data Model](#create-the-data-model)
@@ -6,6 +22,7 @@
 5.  [Create a Product Detail Page](#create-a-product-detail-page)
 6.  [Create a Stores Map Page](#create-a-stores-map-page)
 7.  [Cross-Filtering and Navigation](#cross-filtering-and-navigation)
+8.  [Create Metrics for Users Outside the Company using SQL](#create-metrics-for-users-outside-the-company-using-sql)
 
 ## Import the Data into Power BI
 
@@ -267,3 +284,6 @@ The final task is to add navigation buttons for the individual report pages. Cli
  
 This completes the report.
 
+## Create Metrics for Users Outside the Company using SQL
+
+For this final task I will connect to a  Postgres database server hosted on Microsoft Azure. Using VSCode with the SQLTools extension I will extract data with SQL queries from the database. You will find .sql files in the SQL folder with the SQL queries and .csv files in the CSV folder with the results of the queries. AT the time of writing there was an issue with the dim_user table in the database, I could write the correct query but not run it to obtain the results. 
